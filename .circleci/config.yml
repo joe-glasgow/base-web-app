@@ -1,0 +1,43 @@
+version: 2
+jobs:
+  checks:
+    docker:
+      - image: circleci/node:10.15
+
+    working_directory: ~/app
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run:
+          name: Install dependencies
+          command: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: Lint files
+          command: npm run lint
+
+      - run:
+          name: Check types
+          command: npm run tsc
+
+      - run:
+          name: Run tests
+          command: npm run test
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - checks
