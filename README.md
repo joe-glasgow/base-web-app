@@ -1,5 +1,5 @@
 # Base Web App
-
+Circle CI Build Status:
 [![CircleCI](https://circleci.com/gh/joe-glasgow/base-web-app/tree/master.svg?style=svg)](https://circleci.com/gh/joe-glasgow/base-web-app/tree/master)
 
 ## Features
