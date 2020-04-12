@@ -1,0 +1,17 @@
+version: "2"
+services:
+  node:
+    image: "node:10"
+    user: "node"
+    build:
+      context: .
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - 8500:8500
+      - 8501:8500
+      - 8400:8400
+    command: sh -cl 'npm install --verbose && npm run start'
