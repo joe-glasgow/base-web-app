@@ -1,12 +1,11 @@
 # Base Web App
-
+Circle CI Build Status:
 [![CircleCI](https://circleci.com/gh/joe-glasgow/base-web-app/tree/master.svg?style=svg)](https://circleci.com/gh/joe-glasgow/base-web-app/tree/master)
 
 ## Features
 
-This project has out-of-the-box support for the following things:
+This project has out-of-the-box support for the following libs, tools and packages:
 
-- General Setup with:
 
   React 16,
   Reselect,
@@ -26,6 +25,11 @@ This project has out-of-the-box support for the following things:
   Husky,
   Storybook
 
+## UI
+[logo]:https://material-ui.com/static/logo_raw.svg
+![alt text][logo]
+The application comes bundled with [Material UI](https://material-ui.com/) and [StoryBook](https://storybook.js.org/).
+
 ## Installation
 
 This app can be installed by using the command:
@@ -34,7 +38,7 @@ This app can be installed by using the command:
 
 To let docker take care of this:
 
-    docker build .
+    docker-compose -f docker-compose.dev.yml up
 
 ## Usage
 
