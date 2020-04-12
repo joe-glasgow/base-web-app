@@ -4,9 +4,8 @@ Circle CI Build Status:
 
 ## Features
 
-This project has out-of-the-box support for the following things:
+This project has out-of-the-box support for the following libs, tools and packages:
 
-- General Setup with:
 
   React 16,
   Reselect,
@@ -25,6 +24,11 @@ This project has out-of-the-box support for the following things:
   PostCSS,
   Husky,
   Storybook
+
+## UI
+[logo]:https://material-ui.com/static/logo_raw.svg
+![alt text][logo]
+The application comes bundled with [Material UI](https://material-ui.com/) and [StoryBook](https://storybook.js.org/).
 
 ## Installation
 
