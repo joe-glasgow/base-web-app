@@ -1,5 +1,5 @@
 // import React, { Suspense } from 'react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { Link, Route, Switch } from 'react-router-dom';
@@ -17,6 +17,12 @@ import css from './App.module.css';
 
 const App: React.FC<any> = () => {
     const { t } = useTranslation();
+    useEffect(() => {
+        const jssStyles: any = document.querySelector('#jss-server-side');
+        if (jssStyles) {
+            jssStyles.parentElement.removeChild(jssStyles);
+        }
+    }, []);
     return (
         // <Suspense fallback={<div>Loading</div>}>
         <div className={css.wrapper}>
