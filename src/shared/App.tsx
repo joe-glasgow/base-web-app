@@ -18,7 +18,7 @@ import css from './App.module.css';
 const App: React.FC<any> = () => {
     const { t } = useTranslation();
     useEffect(() => {
-        const jssStyles = document.querySelector('#jss-server-side');
+        const jssStyles: HTMLScriptElement | null = document.querySelector('#jss-server-side');
         if (jssStyles) {
             jssStyles.parentElement.removeChild(jssStyles);
         }
