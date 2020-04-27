@@ -1,6 +1,7 @@
 import React from 'react';
 
 type Props = {
+    materialCSS?: any;
     children: any;
     css: string[];
     helmetContext: any;
@@ -9,6 +10,7 @@ type Props = {
 };
 
 const HTML = ({
+    materialCSS,
     children,
     css = [],
     scripts = [],
@@ -27,6 +29,7 @@ const HTML = ({
             {css.filter(Boolean).map((href) => (
                 <link key={href} rel="stylesheet" href={href} />
             ))}
+            <style id="jss-server-side">${materialCSS}</style>
             <script
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{

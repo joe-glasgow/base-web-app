@@ -3,6 +3,7 @@ import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { ThemeProvider } from '@material-ui/core/styles';
 
 import { configureStore } from '../shared/store';
 import App from '../shared/App';
@@ -24,7 +25,9 @@ hydrate(
         <Router history={history}>
             <IntlProvider>
                 <HelmetProvider>
-                    <App />
+                    <ThemeProvider theme={{}}>
+                        <App />
+                    </ThemeProvider>
                 </HelmetProvider>
             </IntlProvider>
         </Router>

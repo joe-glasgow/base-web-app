@@ -5,7 +5,7 @@ const generateSourceMap = process.env.OMIT_SOURCEMAP === 'true' ? false : true;
 
 const cssRegex = /\.((c|sa|sc)ss)$/i;
 const cssModuleRegex = /\.module\.((c|sa|sc)ss)$/;
-
+const sassRegex = /\.(sass|scss)$/;
 // temporary wrapper function around getCSSModuleLocalIdent until this issue is resolved:
 // https://github.com/webpack-contrib/css-loader/pull/965
 const getLocalIdentWorkaround = (
@@ -41,6 +41,34 @@ const babelLoader = {
         cacheCompression: process.env.NODE_ENV === 'production',
         compact: process.env.NODE_ENV === 'production',
     },
+};
+
+const sassLoader = {
+    test: sassRegex,
+    use: [
+        { loader: MiniCssExtractPlugin.loader },
+        { loader: 'css-modules-simple-types-loader' },
+        {
+            loader: 'css-loader',
+            options: {
+                modules: {
+                    localIdentName: '[name]_[local]_[hash:base64:5]',
+                    mode: 'local',
+                },
+                import: false,
+                localsConvention: 'camelCase',
+            },
+        },
+        {
+            loader: require.resolve('postcss-loader'),
+        },
+        {
+            loader: 'sass-loader',
+            options: {
+                sourceMap: true,
+            },
+        },
+    ],
 };
 
 const cssModuleLoaderClient = {
@@ -163,6 +191,7 @@ export const client = [
     {
         oneOf: [
             babelLoader,
+            sassLoader,
             cssModuleLoaderClient,
             cssLoaderClient,
             urlLoaderClient,
@@ -175,6 +204,7 @@ export const server = [
     {
         oneOf: [
             babelLoader,
+            sassLoader,
             cssModuleLoaderServer,
             cssLoaderServer,
             urlLoaderServer,
