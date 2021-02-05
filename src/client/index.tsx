@@ -21,7 +21,7 @@ const store =
 
 hydrate(
     <Provider store={store}>
-        <Router history={history}>
+        <Router>
             <IntlProvider>
                 <HelmetProvider>
                     <App />

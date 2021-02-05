@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledButton = styled.Button`
+const StyledButton = styled.button`
     background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
     border-radius: 3px;
     border: 0;
