@@ -119,7 +119,7 @@ Then you can use it in JSX like `<div><Logo /></div>`.
 
 ### Use plain JavaScript instead of TypeScript
 
-- remove the `@babel/typescript` preset from `babel.config.js`
+- remove the `@babel/typescript` preset from `babel.preview.js`
 - uninstall TypeScript: `npm uninstall typescript @babel/preset-typescript`
 - uninstall all dependencies beginning with `@types/`
 - delete `tsconfig.json` and `src/global.d.ts`
