@@ -7,9 +7,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import { configureStore } from '../shared/store';
 import App from '../shared/App';
 import IntlProvider from '../shared/i18n/IntlProvider';
-import createHistory from '../shared/store/history';
-
-const history = createHistory();
 
 // Create/use the store
 // history MUST be passed here if you want syncing between server on initial route
