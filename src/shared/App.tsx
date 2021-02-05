@@ -33,15 +33,10 @@ const App: React.FC<any> = () => {
             />
             <h1>Base Web App</h1>
             <Switch>
-                <Route exact path={routes.home}>
-                    <Home />
-                </Route>
-                <Route exact path={routes.page1}>
-                    <Page1 />
-                </Route>
-                <Route exact path={routes.page2}>
-                    <Page2 />
-                </Route>
+                <Route exact path={routes.home} component={Home} />
+                <Route exact path={routes.page1} component={Page1} />
+                <Route exact path={routes.page2} component={Page2} />
+                <Route render={() => '404!'} />
             </Switch>
             <h2>{t('router-headline')}</h2>
             <ul>

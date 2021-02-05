@@ -26,9 +26,7 @@ This project has out-of-the-box support for the following libs, tools and packag
   Storybook
 
 ## UI
-[logo]:https://material-ui.com/static/logo_raw.svg
-![alt text][logo]
-The application comes bundled with [Material UI](https://material-ui.com/) and [StoryBook](https://storybook.js.org/).
+The application comes bundled with [StoryBook](https://storybook.js.org/).
 
 ## Installation
 

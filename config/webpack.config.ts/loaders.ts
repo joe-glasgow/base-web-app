@@ -142,7 +142,7 @@ const cssModuleLoaderServer = {
 const cssLoaderServer = {
     test: cssRegex,
     exclude: cssModuleRegex,
-    use: [MiniCssExtractPlugin.loader, require.resolve('css-loader')],
+    use: [{ loader: MiniCssExtractPlugin.loader }, { loader: require.resolve('css-loader') }],
 };
 
 const urlLoaderClient = {

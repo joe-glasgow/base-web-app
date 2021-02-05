@@ -11,6 +11,7 @@ import { clientOnly } from '../../scripts/utils';
 import envBuilder from '../env';
 
 const env = envBuilder();
+const devMode = process.env.NODE_ENV !== 'production';
 
 const isProfilerEnabled = () => process.argv.includes('--profile');
 
@@ -23,6 +24,11 @@ export const shared = [
     }),
     new CaseSensitivePathsPlugin(),
 ];
+
+if (devMode) {
+    // only enable hot in development
+    shared.push(new webpack.HotModuleReplacementPlugin());
+}
 
 export const client = [
     clientOnly() &&
