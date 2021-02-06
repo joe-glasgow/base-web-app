@@ -1,8 +1,4 @@
-import { addDecorator, configure } from '@storybook/react';
-
-import StylesDecorator from './styles-decorator';
-
-addDecorator(StylesDecorator);
+import { configure } from '@storybook/react';
 
 // automatically import all files ending in *.stories.js
 configure(require.context('../stories', true, /\.stories\.tsx$/), module);
