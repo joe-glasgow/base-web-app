@@ -5,7 +5,6 @@ import resolvers from './resolvers';
 import plugins from './plugins';
 // const { client: clientLoaders } = require('./loaders');
 import { client as clientLoaders } from './loaders';
-const generateSourceMap = process.env.OMIT_SOURCEMAP === 'true' ? false : true;
 
 export default {
     name: 'client',
@@ -20,7 +19,7 @@ export default {
     },
     output: {
         path: path.join(paths.clientBuild, paths.publicPath),
-        filename: 'bundle.js',
+        filename: '[name].js',
         publicPath: paths.publicPath,
         chunkFilename: '[name].[chunkhash:8].chunk.js',
     },
@@ -29,13 +28,7 @@ export default {
     },
     resolve: { ...resolvers },
     plugins: [...plugins.shared, ...plugins.client],
-    node: {
-        dgram: 'empty',
-        fs: 'empty',
-        net: 'empty',
-        tls: 'empty',
-        child_process: 'empty',
-    },
+    node: false,
     optimization: {
         minimizer: [
             new TerserPlugin({
@@ -47,12 +40,11 @@ export default {
                         // into invalid ecma 5 code. This is why the 'compress' and 'output'
                         // sections only apply transformations that are ecma 5 safe
                         // https://github.com/facebook/create-react-app/pull/4234
-                        ecma: 8,
+                        ecma: 2016,
                     },
                     compress: {
                         // TODO: according to TypeScript, compress does not have an 'ecma' option. Investigate
                         // ecma: 5,
-                        warnings: false,
                         // Disabled because of an issue with Uglify breaking seemingly valid code:
                         // https://github.com/facebook/create-react-app/issues/2376
                         // Pending further investigation:
@@ -79,12 +71,10 @@ export default {
                 // Default number of concurrent runs: os.cpus().length - 1
                 parallel: true,
                 // Enable file caching
-                cache: true,
-                sourceMap: generateSourceMap,
             }),
         ],
-        namedModules: true,
-        noEmitOnErrors: true,
+        moduleIds: 'named',
+        emitOnErrors: true,
         splitChunks: {
             cacheGroups: {
                 commons: {

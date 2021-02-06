@@ -1,16 +1,12 @@
 import React from 'react';
 import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { ThemeProvider } from '@material-ui/core/styles';
 
 import { configureStore } from '../shared/store';
 import App from '../shared/App';
 import IntlProvider from '../shared/i18n/IntlProvider';
-import createHistory from '../shared/store/history';
-
-const history = createHistory();
 
 // Create/use the store
 // history MUST be passed here if you want syncing between server on initial route
@@ -22,12 +18,10 @@ const store =
 
 hydrate(
     <Provider store={store}>
-        <Router history={history}>
+        <Router>
             <IntlProvider>
                 <HelmetProvider>
-                    <ThemeProvider theme={{}}>
-                        <App />
-                    </ThemeProvider>
+                    <App />
                 </HelmetProvider>
             </IntlProvider>
         </Router>

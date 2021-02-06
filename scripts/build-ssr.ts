@@ -64,21 +64,32 @@ const build = async () => {
     const clientPromise = compilerPromise('client', clientCompiler);
     const serverPromise = compilerPromise('server', serverCompiler);
 
-    serverCompiler.watch({}, (error: any, stats: any) => {
-        if (!error && !stats.hasErrors()) {
-            console.log(stats.toString(serverConfig.stats));
-            return;
+    serverCompiler?.watch(
+        {
+            ignored: /node_modules/,
+        },
+        (error: any, stats: any) => {
+            if (!error && !stats.hasErrors()) {
+                console.log(stats.toString(serverConfig.stats));
+                return;
+            }
+            console.error(chalk.red(stats?.compilation.errors));
         }
-        console.error(chalk.red(stats.compilation.errors));
-    });
+    );
 
-    clientCompiler.watch({}, (error: any, stats: any) => {
-        if (!error && !stats.hasErrors()) {
-            console.log(stats.toString(clientConfig.stats));
-            return;
+    clientCompiler?.watch(
+        {
+            ignored: /node_modules/,
+        },
+        (error: any, stats: any) => {
+            if (!error && !stats.hasErrors()) {
+                console.log(stats.toString(clientConfig.stats));
+                return;
+            }
+            console.error(error);
+            console.error(chalk.red(stats?.compilation.errors));
         }
-        console.error(chalk.red(stats.compilation.errors));
-    });
+    );
 
     // wait until client and server is compiled
     try {

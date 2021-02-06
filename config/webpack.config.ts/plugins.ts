@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import ManifestPlugin from 'webpack-manifest-plugin';
+import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -11,6 +11,7 @@ import { clientOnly } from '../../scripts/utils';
 import envBuilder from '../env';
 
 const env = envBuilder();
+const devMode = process.env.NODE_ENV !== 'production';
 
 const isProfilerEnabled = () => process.argv.includes('--profile');
 
@@ -24,6 +25,11 @@ export const shared = [
     new CaseSensitivePathsPlugin(),
 ];
 
+if (devMode) {
+    // only enable hot in development
+    shared.push(new webpack.HotModuleReplacementPlugin());
+}
+
 export const client = [
     clientOnly() &&
         new HtmlWebpackPlugin({
@@ -33,12 +39,12 @@ export const client = [
         }),
     // new webpack.ProgressPlugin(), // make this optional e.g. via `--progress` flag
     new webpack.DefinePlugin(env.stringified),
+    new WebpackManifestPlugin({ fileName: 'manifest.json', writeToFileEmit: true }),
     new webpack.DefinePlugin({
         __SERVER__: 'false',
         __BROWSER__: 'true',
     }),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new ManifestPlugin({ fileName: 'manifest.json' }),
+    new webpack.IgnorePlugin({ resourceRegExp: /^\.\/locale$/, contextRegExp: /moment$/ }),
     isProfilerEnabled() && new webpack.debug.ProfilingPlugin(),
 ].filter(Boolean);
 
@@ -50,13 +56,17 @@ export const server = [
     // We should make sure to have our locales in shared/i18n/locales ready at build time.
     // They are then copied into the server build folder so they can be accessed via
     // i18next-xhr-backend and our custom /locales/:locale/:namespace endpoint.
-    new CopyPlugin([
-        {
-            from: paths.locales,
-            to: path.join(paths.serverBuild, 'locales'),
-            ignore: ['*.missing.json'],
-        },
-    ]),
+    new CopyPlugin({
+        patterns: [
+            {
+                from: paths.locales,
+                to: path.join(paths.serverBuild, 'locales'),
+                globOptions: {
+                    ignore: ['*.missing.json'],
+                },
+            },
+        ],
+    }),
 ];
 
 export default {

@@ -26,9 +26,7 @@ This project has out-of-the-box support for the following libs, tools and packag
   Storybook
 
 ## UI
-[logo]:https://material-ui.com/static/logo_raw.svg
-![alt text][logo]
-The application comes bundled with [Material UI](https://material-ui.com/) and [StoryBook](https://storybook.js.org/).
+The application comes bundled with [StoryBook](https://storybook.js.org/).
 
 ## Installation
 
@@ -119,7 +117,7 @@ Then you can use it in JSX like `<div><Logo /></div>`.
 
 ### Use plain JavaScript instead of TypeScript
 
-- remove the `@babel/typescript` preset from `babel.config.js`
+- remove the `@babel/typescript` preset from `babel.preview.js`
 - uninstall TypeScript: `npm uninstall typescript @babel/preset-typescript`
 - uninstall all dependencies beginning with `@types/`
 - delete `tsconfig.json` and `src/global.d.ts`

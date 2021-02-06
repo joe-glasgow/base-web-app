@@ -1,4 +1,4 @@
-import webpack, { Compiler } from 'webpack';
+import webpack from 'webpack';
 import nodemon from 'nodemon';
 import express from 'express';
 import webpackDevMiddleware from 'webpack-dev-middleware';
@@ -63,7 +63,6 @@ const start = async () => {
         webpackDevMiddleware(clientCompiler, {
             publicPath: clientConfig.output.publicPath,
             stats: clientConfig.stats,
-            watchOptions,
         })
     );
 
@@ -85,10 +84,8 @@ const start = async () => {
 
         if (stats.hasErrors()) {
             const info = stats.toJson();
-            const errors = info.errors[0].split('\n');
-            logMessage(errors[0], 'error');
-            logMessage(errors[1], 'error');
-            logMessage(errors[2], 'error');
+            const errors = info.errors;
+            logMessage(JSON.stringify(errors), 'error');
         }
     });
 

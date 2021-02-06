@@ -13,7 +13,7 @@ export const logMessage = (message: any, level: string = 'info') => {
 };
 
 export const compilerPromise = (name: string, compiler: any) => {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
         compiler.hooks.compile.tap(name, () => {
             logMessage(`[${name}] Compiling `);
         });

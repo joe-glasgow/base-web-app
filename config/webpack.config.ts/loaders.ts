@@ -54,9 +54,9 @@ const sassLoader = {
                 modules: {
                     localIdentName: '[name]_[local]_[hash:base64:5]',
                     mode: 'local',
+                    exportLocalsConvention: 'camelCase',
                 },
                 import: false,
-                localsConvention: 'camelCase',
             },
         },
         {
@@ -79,8 +79,8 @@ const cssModuleLoaderClient = {
         {
             loader: require.resolve('css-loader'),
             options: {
-                localsConvention: 'camelCase',
                 modules: {
+                    exportLocalsConvention: 'camelCase',
                     // getLocalIdent: getCSSModuleLocalIdent,
                     getLocalIdent: getLocalIdentWorkaround,
                 },
@@ -121,10 +121,10 @@ const cssModuleLoaderServer = {
         {
             loader: require.resolve('css-loader'),
             options: {
-                onlyLocals: true,
-                localsConvention: 'camelCase',
                 importLoaders: 1,
                 modules: {
+                    exportOnlyLocals: true,
+                    exportLocalsConvention: 'camelCase',
                     // getLocalIdent: getCSSModuleLocalIdent,
                     getLocalIdent: getLocalIdentWorkaround,
                 },
@@ -142,7 +142,7 @@ const cssModuleLoaderServer = {
 const cssLoaderServer = {
     test: cssRegex,
     exclude: cssModuleRegex,
-    use: [MiniCssExtractPlugin.loader, require.resolve('css-loader')],
+    use: [{ loader: MiniCssExtractPlugin.loader }, { loader: require.resolve('css-loader') }],
 };
 
 const urlLoaderClient = {
