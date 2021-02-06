@@ -13,4 +13,4 @@ services:
     ports:
       - 8500:8500
       - 8501:8501
-    command: sh -cl 'npm install --verbose && npm run build'
+    command: sh -cl 'npm install --verbose && npm run build && node ./dist/server/server.js'
