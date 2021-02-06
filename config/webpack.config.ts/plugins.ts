@@ -39,13 +39,13 @@ export const client = [
         }),
     // new webpack.ProgressPlugin(), // make this optional e.g. via `--progress` flag
     new webpack.DefinePlugin(env.stringified),
-    new WebpackManifestPlugin({ fileName: 'manifest.json', writeToFileEmit: true }),
     new webpack.DefinePlugin({
         __SERVER__: 'false',
         __BROWSER__: 'true',
     }),
     new webpack.IgnorePlugin({ resourceRegExp: /^\.\/locale$/, contextRegExp: /moment$/ }),
     isProfilerEnabled() && new webpack.debug.ProfilingPlugin(),
+    new WebpackManifestPlugin({ fileName: 'manifest.json', writeToFileEmit: true }),
 ].filter(Boolean);
 
 export const server = [
