@@ -7,11 +7,11 @@ Circle CI Build Status:
 This project has out-of-the-box support for the following libs, tools and packages:
 
 
-  React 16,
+  React 17,
   Reselect,
   Docker,
   Babel 7,
-  Webpack 4,
+  Webpack 5,
   ESLint 6,
   TypeScript (via Babel),
   Prettier,
