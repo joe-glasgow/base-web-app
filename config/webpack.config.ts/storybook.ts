@@ -1,5 +1,5 @@
 import { client as loaders } from './loaders';
-import { client as plugins } from './plugins';
+import { sBClient as plugins } from './plugins';
 
 export default (storybookBaseConfig: any) => {
     storybookBaseConfig.plugins = [...storybookBaseConfig.plugins, ...plugins];

@@ -30,7 +30,7 @@ if (devMode) {
     shared.push(new webpack.HotModuleReplacementPlugin());
 }
 
-export const client = [
+const clientBase = [
     clientOnly() &&
         new HtmlWebpackPlugin({
             filename: path.join(paths.clientBuild, 'index.html'),
@@ -45,8 +45,14 @@ export const client = [
     }),
     new webpack.IgnorePlugin({ resourceRegExp: /^\.\/locale$/, contextRegExp: /moment$/ }),
     isProfilerEnabled() && new webpack.debug.ProfilingPlugin(),
+];
+
+export const client = [
+    ...clientBase,
     new WebpackManifestPlugin({ fileName: 'manifest.json', writeToFileEmit: true }),
 ].filter(Boolean);
+
+export const sBClient = [...clientBase].filter(Boolean);
 
 export const server = [
     new webpack.DefinePlugin({
@@ -72,5 +78,6 @@ export const server = [
 export default {
     shared,
     client,
+    sBClient,
     server,
 };
