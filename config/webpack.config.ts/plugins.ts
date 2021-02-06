@@ -12,6 +12,8 @@ import envBuilder from '../env';
 
 const env = envBuilder();
 const devMode = process.env.NODE_ENV !== 'production';
+const isDevelopment = process.env.NODE_ENV !== 'production';
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const isProfilerEnabled = () => process.argv.includes('--profile');
 
@@ -50,6 +52,7 @@ const clientBase = [
 export const client = [
     ...clientBase,
     new WebpackManifestPlugin({ fileName: 'manifest.json', writeToFileEmit: true }),
+    isDevelopment && new ReactRefreshWebpackPlugin(),
 ].filter(Boolean);
 
 export const sBClient = [...clientBase].filter(Boolean);

@@ -1,4 +1,5 @@
 import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
+
 // @ts-ignore
 import getCSSModuleLocalIdent from 'react-dev-utils/getCSSModuleLocalIdent';
 const generateSourceMap = process.env.OMIT_SOURCEMAP === 'true' ? false : true;
@@ -6,6 +7,8 @@ const generateSourceMap = process.env.OMIT_SOURCEMAP === 'true' ? false : true;
 const cssRegex = /\.((c|sa|sc)ss)$/i;
 const cssModuleRegex = /\.module\.((c|sa|sc)ss)$/;
 const sassRegex = /\.(sass|scss)$/;
+
+const isDevelopment = process.env.NODE_ENV !== 'production';
 // temporary wrapper function around getCSSModuleLocalIdent until this issue is resolved:
 // https://github.com/webpack-contrib/css-loader/pull/965
 const getLocalIdentWorkaround = (
@@ -35,6 +38,7 @@ const babelLoader = {
                         },
                     },
                 },
+                isDevelopment && require.resolve('react-refresh/babel'),
             ],
         ],
         cacheDirectory: true,
