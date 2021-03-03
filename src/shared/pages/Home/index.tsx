@@ -17,7 +17,7 @@ const App: React.FC<any> = () => {
     );
 
     return (
-        <React.Fragment>
+        <>
             <Features />
             <h2>{t('i18n-example')}</h2>
             <StyledButton>Hello!</StyledButton>
@@ -29,7 +29,7 @@ const App: React.FC<any> = () => {
                     English
                 </button>
             </p>
-        </React.Fragment>
+        </>
     );
 };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 type Props = {
     children: any;
@@ -6,6 +6,7 @@ type Props = {
     helmetContext: any;
     scripts: string[];
     state: string;
+    styles?: Array<ReactElement<{}>>;
 };
 
 const HTML = ({
@@ -13,6 +14,7 @@ const HTML = ({
     css = [],
     scripts = [],
     state = '{}',
+    styles = undefined,
     helmetContext: { helmet },
 }: Props) => (
     <html lang="">
@@ -21,6 +23,7 @@ const HTML = ({
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             {helmet.base.toComponent()}
             {helmet.title.toComponent()}
+            {styles}
             {helmet.meta.toComponent()}
             {helmet.link.toComponent()}
             {helmet.script.toComponent()}
