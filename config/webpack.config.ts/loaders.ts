@@ -38,7 +38,7 @@ const babelLoader = {
                         },
                     },
                 },
-                isDevelopment && require.resolve('react-refresh/babel'),
+                isDevelopment ? require.resolve('react-refresh/babel') : undefined,
             ],
         ],
         cacheDirectory: true,
