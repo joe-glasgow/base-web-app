@@ -3,17 +3,10 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { Link, Route, Switch } from 'react-router-dom';
+import loadable from '@loadable/component';
 import favicon from '../shared/assets/favicon.png';
-import Home from './pages/Home';
-import Page1 from './pages/Page-1';
-import Page2 from './pages/Page-2';
 import routes from './routes';
 import css from './App.module.scss';
-
-// Does not yet work with server side rendering:
-// const Home = React.lazy(() => import('./pages/Home'));
-// const Page1 = React.lazy(() => import('./pages/Page-1'));
-// const Page2 = React.lazy(() => import('./pages/Page-2'));
 
 const App: React.FC<any> = () => {
     const { t } = useTranslation();
@@ -33,9 +26,21 @@ const App: React.FC<any> = () => {
             />
             <h1>Base Web App</h1>
             <Switch>
-                <Route exact path={routes.home} component={Home} />
-                <Route exact path={routes.page1} component={Page1} />
-                <Route exact path={routes.page2} component={Page2} />
+                <Route
+                    exact
+                    path={routes.home}
+                    component={loadable(() => import('./pages/Home'))}
+                />
+                <Route
+                    exact
+                    path={routes.page1}
+                    component={loadable(() => import('./pages/Page-1'))}
+                />
+                <Route
+                    exact
+                    path={routes.page2}
+                    component={loadable(() => import('./pages/Page-2'))}
+                />
                 <Route render={() => '404!'} />
             </Switch>
             <h2>{t('router-headline')}</h2>
