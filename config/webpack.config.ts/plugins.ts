@@ -11,9 +11,10 @@ import { clientOnly } from '../../scripts/utils';
 import envBuilder from '../env';
 
 const env = envBuilder();
-const devMode = process.env.NODE_ENV !== 'production';
 const isDevelopment = process.env.NODE_ENV !== 'production';
+const analyze = process.env.ANALYZE;
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const isProfilerEnabled = () => process.argv.includes('--profile');
 
@@ -27,7 +28,7 @@ export const shared = [
     new CaseSensitivePathsPlugin(),
 ];
 
-if (devMode) {
+if (isDevelopment) {
     // only enable hot in development
     shared.push(new webpack.HotModuleReplacementPlugin());
 }
@@ -52,6 +53,7 @@ const clientBase = [
 export const client = [
     ...clientBase,
     new WebpackManifestPlugin({ fileName: 'manifest.json', writeToFileEmit: true }),
+    analyze && new BundleAnalyzerPlugin(),
     isDevelopment && new ReactRefreshWebpackPlugin(),
 ].filter(Boolean);
 

@@ -23,7 +23,7 @@
     "plop": "plop",
     "start:devserver": "cross-env NODE_ENV=development TS_NODE_PROJECT=tsconfig.tooling.json ts-node scripts/start",
     "start": "concurrently npm:start:devserver npm:storybook",
-    "start:analyzer": "webpack-bundle-analyzer build/client/static/bundle-stats.json",
+    "start:analyzer": "cross-env ANALYZE=true npm run build",
     "test": "cross-env TS_NODE_PROJECT=tsconfig.tooling.json ts-node scripts/test --env=jsdom",
     "test:update": "npm test --updateSnapshot",
     "transpile": "npm babel -d build/transpiled ./src --extensions .es6,.js,.es,.jsx,.mjs,.ts,.tsx --ignore **/*.d.ts",
