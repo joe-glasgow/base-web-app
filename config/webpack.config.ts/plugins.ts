@@ -15,6 +15,7 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 const analyze = process.env.ANALYZE;
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const isProfilerEnabled = () => process.argv.includes('--profile');
 
@@ -55,6 +56,14 @@ export const client = [
     new WebpackManifestPlugin({ fileName: 'manifest.json', writeToFileEmit: true }),
     analyze && new BundleAnalyzerPlugin(),
     isDevelopment && new ReactRefreshWebpackPlugin(),
+    !isDevelopment &&
+        new CompressionPlugin({
+            filename: '[base].gz',
+            algorithm: 'gzip',
+            test: /\.(js|css)(\?.*)?$/i,
+            minRatio: Number.MAX_SAFE_INTEGER, // Compress everything
+            deleteOriginalAssets: false,
+        }),
 ].filter(Boolean);
 
 export const sBClient = [...clientBase].filter(Boolean);

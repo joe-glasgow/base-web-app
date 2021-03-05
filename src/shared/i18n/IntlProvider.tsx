@@ -20,8 +20,7 @@ i18next.init({
     },
     react: {
         // Must be false until Suspense is supported on the server side
-        useSuspense: false,
-        wait: true,
+        useSuspense: true,
     },
     debug: process.env.NODE_ENV === 'development' && __BROWSER__,
     fallbackLng: 'en_US',
