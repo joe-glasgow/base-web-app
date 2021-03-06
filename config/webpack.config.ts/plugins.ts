@@ -4,6 +4,7 @@ import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import HTMLInlineCSSWebpackPlugin from 'html-inline-css-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import paths from '../paths';
 import { clientOnly } from '../../scripts/utils';
@@ -26,6 +27,7 @@ export const shared = [
         chunkFilename:
             process.env.NODE_ENV === 'development' ? '[id].css' : '[id].[contenthash].css',
     }),
+    new HTMLInlineCSSWebpackPlugin(),
     new CaseSensitivePathsPlugin(),
 ];
 

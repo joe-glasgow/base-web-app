@@ -148,6 +148,10 @@ Then you can use it in JSX like `<div><Logo /></div>`.
 - remove all types from all files if there still are any
 - remove `tsConfig` option from `.dependency-cruiser.js`
 
+### Gzip by default
+
+Webpack builds assets (JS/CSS) to Gzip and the Express app serves these versions automatically.
+
 ## License
 
 MIT.

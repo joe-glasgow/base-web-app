@@ -5,6 +5,8 @@ import cors from 'cors';
 import chalk from 'chalk';
 import manifestHelpers from 'express-manifest-helpers';
 import bodyParser from 'body-parser';
+// @ts-ignore - no types provided - TODO: include module definition
+import * as minifyHTML from 'express-minify-html';
 import paths from '../../config/paths';
 // import { configureStore } from '../shared/store';
 import errorHandler from './middleware/errorHandler';
@@ -54,6 +56,23 @@ app.use(
         manifestPath: `${manifestPath}/manifest.json`,
     })
 );
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(
+        minifyHTML({
+            override: true,
+            exception_url: false,
+            htmlMinifier: {
+                removeComments: true,
+                collapseWhitespace: true,
+                collapseBooleanAttributes: true,
+                removeAttributeQuotes: true,
+                removeEmptyAttributes: true,
+                minifyJS: true,
+            },
+        })
+    );
+}
 
 app.use(serverRenderer());
 
