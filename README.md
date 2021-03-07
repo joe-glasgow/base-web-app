@@ -28,7 +28,7 @@ Twisted for my own purposes.
 - - [Testing](#testing)
 - - [Utilities](#utilities)
 - - [Other features](#other-features)
-- [Composing The UI](##composing-the-ui)
+- [Composing The UI](#composing-the-ui)
 - [Installation and Quickstart](#installation--quick-start)
 - [Usage](#usage)
 - - [Scripts](#scripts)
