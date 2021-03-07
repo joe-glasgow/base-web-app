@@ -11,6 +11,7 @@ const paths: any = {
     serverBuild: resolveApp('dist/server'),
     dotenv: resolveApp('.env'),
     src: resolveApp('src'),
+    robots: resolveApp('src/robots.txt'),
     srcClient: resolveApp('src/client'),
     srcServer: resolveApp('src/server'),
     srcShared: resolveApp('src/shared'),

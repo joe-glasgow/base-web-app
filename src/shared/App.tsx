@@ -23,6 +23,7 @@ const App: React.FC<any> = () => {
                 defaultTitle="Base Web App"
                 titleTemplate="%s – Base Web App"
                 link={[{ rel: 'icon', type: 'image/png', href: favicon }]}
+                meta={[{ name: 'description', content: 'Base Web App' }]}
             />
             <h1>Base Web App</h1>
             <Switch>
