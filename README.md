@@ -1,4 +1,5 @@
 [icon]: https://img.icons8.com/ios/452/foundation.png
+[performance]: https://uc535bf5c42e938c1a57c5401ea9.previews.dropboxusercontent.com/p/thumb/ABGpHk82992wtWw7734zIO9dNJAI6c4DBzre3wURaa8HLuIfve0znRIAHt36eMsS-0TVXxJELA-uWprOTlmamWyL8YXiiJsJuITDjCukvAO2JWa2BB4YsjDg_rUrsAjYqpEHIKOn_fWOvuQ0FPVibdIB54Tce94ROTrdj-wzMYe9i72o-IZCe63QRG6UmGJpmdzhHskoQaEAzVGrpv4exZhz2fDDNkaP64nwacHc2lVIPR-ew7vASFku0F2LqKDiWmMocHv9779B5LnUlBmk0KUuO50Asr2cY6B9c7J9PbitwgW2ZnoOJ9qEt4IgWZbRV0_gDpD9STvOzjBu4-NheEim5KsN79a6H75y80nAQxhQTrw8KnArVbMgQ0aakEH264VDQjayP8fRmqu9SiqMyBbP/p.png
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/joe-glasgow/base-web-app/issues) [![Known Vulnerabilities](https://snyk.io/test/github/joe-glasgow/base-web-app/badge.svg)](https://snyk.io/test/github/joe-glasgow/base-web-app) [![CircleCI](https://circleci.com/gh/joe-glasgow/base-web-app/tree/main.svg?style=svg)](https://circleci.com/gh/joe-glasgow/base-web-app/tree/main)
 
@@ -9,6 +10,10 @@ This repo builds on the work of others and my additions lay on extra layers of e
 
 There is no included UI library, to keep the weight of the application as small as possible.
 Just run and go!
+
+Lighthouse (Mobile):
+
+![performance]
 
 ##### Frontend Stack:
 
