@@ -35,6 +35,7 @@ app.get('*.css', (req, res, next) => {
 // if (process.env.NODE_ENV === 'development') {
 app.use(paths.publicPath, express.static(path.join(paths.clientBuild, paths.publicPath)));
 // }
+app.use('/robots.txt', express.static(path.join(paths.clientBuild, 'robots.txt')));
 
 app.use(cors());
 

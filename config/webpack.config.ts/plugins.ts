@@ -81,6 +81,10 @@ export const server = [
     new CopyPlugin({
         patterns: [
             {
+                from: paths.robots,
+                to: paths.clientBuild,
+            },
+            {
                 from: paths.locales,
                 to: path.join(paths.serverBuild, 'locales'),
                 globOptions: {
