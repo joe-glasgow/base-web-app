@@ -103,6 +103,7 @@ Webpack builds assets (JS/CSS) to Gzip and the Express app serves these versions
 ### UI
 
 - [Storybook](https://storybook.js.org/) - (Dev build only, optional)
+- Entry point for your React components lives in [App.tsx](/blob/main/src/shared/App.tsx), A basic UI with styling has been provided as well as routing. 
 
 ### Libraries
 
