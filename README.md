@@ -11,9 +11,10 @@ This repo builds on the work of others and my additions lay on extra layers of e
 There is no included UI library, to keep the weight of the application as small as possible.
 Just run and go!
 
-Lighthouse (Mobile):
+Lighthouse (Mobile & Desktop):
 
 <img src="https://uc535bf5c42e938c1a57c5401ea9.previews.dropboxusercontent.com/p/thumb/ABGpHk82992wtWw7734zIO9dNJAI6c4DBzre3wURaa8HLuIfve0znRIAHt36eMsS-0TVXxJELA-uWprOTlmamWyL8YXiiJsJuITDjCukvAO2JWa2BB4YsjDg_rUrsAjYqpEHIKOn_fWOvuQ0FPVibdIB54Tce94ROTrdj-wzMYe9i72o-IZCe63QRG6UmGJpmdzhHskoQaEAzVGrpv4exZhz2fDDNkaP64nwacHc2lVIPR-ew7vASFku0F2LqKDiWmMocHv9779B5LnUlBmk0KUuO50Asr2cY6B9c7J9PbitwgW2ZnoOJ9qEt4IgWZbRV0_gDpD9STvOzjBu4-NheEim5KsN79a6H75y80nAQxhQTrw8KnArVbMgQ0aakEH264VDQjayP8fRmqu9SiqMyBbP/p.png" width="240"/>
+<img src="https://uc55fed7ab46cc3b5bd45eeea315.previews.dropboxusercontent.com/p/thumb/ABFIKTiIY31xsxTDXcle6nOlYx0wC1HyM12fofwreyp7c3QP0OWJ9LQCyPK0GWuhfOZ-Ylac68FT9KfrunouobFMraIY3V_jkXi42_3AM_g3MT5ta-ZdmpEAHTeER9VDqfLMoKQp81b7Cukoyh4Yl1Ub3r9K2xouMzp0SlgmRE2jD8HKl9jHMSpQO5GACSizt9v-Tyzxm8PGPG2b4tQvzCkEQS0A6Hf64zOE9Oapicgl7TiYg2hYxWCZDRQE3sYsFTCZ2TjMlevalHhrV-hloDFiyzW30QyM8Fc4etADqKUs8Dgx3t3AU4IjDpuLoDK8ZzbAwi7CM-cnWM0pF411uwYTca1W6DDk3P_py41koqybLlJVT4Vrt8peC-38EQgLJI_BzYXwC57HqtPl5L5iVLcm/p.png" width="240"/>
 
 ##### Frontend Stack:
 
