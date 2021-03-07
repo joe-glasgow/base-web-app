@@ -62,7 +62,7 @@ Webpack builds assets (JS/CSS) to Gzip and the Express app serves these versions
 - [Redux](https://github.com/reduxjs/redux),
 - [Reselect](https://github.com/reduxjs/reselect),
 
-But please see [this interesting article](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367) from Dan Abramove before implementing.
+But please see [this interesting article](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367) from Dan Abramov before implementing.
 Consider [Context](https://reactjs.org/docs/context.html).
 
 ### Build tools
