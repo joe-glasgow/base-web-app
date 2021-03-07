@@ -4,6 +4,12 @@
 
 # Base Web App [<img src="https://img.icons8.com/ios/452/foundation.png" width="55"/>](icon)
 
+I've created this web app to enable rapid development of React projects that have performance and coding standards baked in.
+This repo builds on the work of others and my additions lay on extra layers of enhancement (such as gzip, loadable components).
+
+There is no included UI library, to keep the weight of the application as small as possible.
+Just run and go!
+
 Forked from the truly wonderful [manuelbieh/react-ssr-setup](https://github.com/manuelbieh/react-ssr-setup).
 
 Twisted for my own purposes.
