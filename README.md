@@ -13,7 +13,7 @@ Just run and go!
 
 Lighthouse (Mobile):
 
-![performance]
+<img src="https://uc535bf5c42e938c1a57c5401ea9.previews.dropboxusercontent.com/p/thumb/ABGpHk82992wtWw7734zIO9dNJAI6c4DBzre3wURaa8HLuIfve0znRIAHt36eMsS-0TVXxJELA-uWprOTlmamWyL8YXiiJsJuITDjCukvAO2JWa2BB4YsjDg_rUrsAjYqpEHIKOn_fWOvuQ0FPVibdIB54Tce94ROTrdj-wzMYe9i72o-IZCe63QRG6UmGJpmdzhHskoQaEAzVGrpv4exZhz2fDDNkaP64nwacHc2lVIPR-ew7vASFku0F2LqKDiWmMocHv9779B5LnUlBmk0KUuO50Asr2cY6B9c7J9PbitwgW2ZnoOJ9qEt4IgWZbRV0_gDpD9STvOzjBu4-NheEim5KsN79a6H75y80nAQxhQTrw8KnArVbMgQ0aakEH264VDQjayP8fRmqu9SiqMyBbP/p.png" width="240"/>
 
 ##### Frontend Stack:
 
