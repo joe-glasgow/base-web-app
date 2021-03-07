@@ -97,8 +97,8 @@ Consider [Context](https://reactjs.org/docs/context.html).
 
 ### Other features
 
-- React Fast Refresh,
-- React i18next,
+- Experimental [React Fast Refresh](https://github.com/pmmmwh/react-refresh-webpack-plugin) - Dev only,
+- Translations via [React i18next](https://react.i18next.com/),
 
 ## Composing the UI
 
