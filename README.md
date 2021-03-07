@@ -21,6 +21,7 @@ Lighthouse (Mobile & Desktop):
 - Typescript (via Babel)
 - React (v.17, Redux)
 - SASS (or plain CSS if preferred)
+- CSS-in-JS (via [styled components](https://styled-components.com/))
 - Webpack
 
 ##### Backend Stack:
@@ -105,6 +106,7 @@ Webpack builds assets (JS/CSS) to Gzip and the Express app serves these versions
 
 ### Libraries
 
+- [Styled Components](https://styled-components.com/),
 - [Redux](https://github.com/reduxjs/redux),
 - [Reselect](https://github.com/reduxjs/reselect),
 
