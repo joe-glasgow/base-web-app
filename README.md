@@ -24,6 +24,7 @@ Twisted for my own purposes.
 - - [Libraries](#libraries)
 - - [Build tools](#build-tools)
 - - [Containerisation](#containerisation)
+- - [Continuous Integration](#continuous-integration)
 - - [Code Quality](#code-quality)
 - - [Testing](#testing)
 - - [Utilities](#utilities)
@@ -73,6 +74,11 @@ Consider [Context](https://reactjs.org/docs/context.html).
 ### Containerisation
 
 - [Docker](https://www.docker.com/get-started) - optional
+
+
+### Continuous Integration
+
+- [CircleCI](https://circleci.com/docs/) - optional
 
 ### Code Quality
 
