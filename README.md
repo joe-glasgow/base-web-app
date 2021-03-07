@@ -5,7 +5,7 @@
 # Base Web App [<img src="https://img.icons8.com/ios/452/foundation.png" width="55"/>](icon)
 
 I've created this web app to enable rapid development of React projects that have performance and coding standards baked in.
-This repo builds on the work of others and my additions lay on extra layers of enhancement (such as gzip, loadable components).
+This repo builds on the work of others and my additions lay on extra layers of enhancement (such as gzip, [loadable components](https://github.com/gregberge/loadable-components)).
 
 There is no included UI library, to keep the weight of the application as small as possible.
 Just run and go!
@@ -88,6 +88,7 @@ Consider [Context](https://reactjs.org/docs/context.html).
 
 ### Utilities
 
+- [Loadable Components](https://github.com/gregberge/loadable-components)
 - [Husky](https://github.com/typicode/husky),
 - [SSR](https://medium.com/jspoint/a-beginners-guide-to-react-server-side-rendering-ssr-bf3853841d55) (Server Side Rendering),
 - [HMR](https://webpack.js.org/concepts/hot-module-replacement/),
