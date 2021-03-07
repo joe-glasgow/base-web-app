@@ -77,6 +77,8 @@ Webpack builds assets (JS/CSS) to Gzip and the Express app serves these versions
 ### Frameworks
 
 - [React](https://reactjs.org/blog/2020/10/20/react-v17.html) 17
+- [NodeJs](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
 
 ### UI
 
