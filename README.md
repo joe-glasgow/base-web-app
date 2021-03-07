@@ -16,6 +16,7 @@ Twisted for my own purposes.
 
 ## Table of Contents
 
+- [Installation and Quickstart](#installation--quick-start)
 - [Features](#features)
 - - [Gzip](#gzip-by-default)
 - - [Languages](#languages)
@@ -30,7 +31,6 @@ Twisted for my own purposes.
 - - [Utilities](#utilities)
 - - [Other features](#other-features)
 - [Composing The UI](#composing-the-ui)
-- [Installation and Quickstart](#installation--quick-start)
 - [Usage](#usage)
 - - [Scripts](#scripts)
 - [Tricks](#tricks)
@@ -39,6 +39,30 @@ Twisted for my own purposes.
 - - [Change the port of the dev environment](#change-the-port-of-the-dev-environment)
 - - [Import SVGs as ReactComponent](#import-svgs-as-reactcomponent)
 - - [Use plain JavaScript instead of TypeScript](#use-plain-javaScript-instead-of-typeScript)
+
+## Installation & Quick Start
+
+This app can be installed by using the command:
+
+    npm install
+
+To let docker take care of this in development mode:
+
+    docker-compose -f docker-compose.dev.yml up
+
+This will start the app on the chosen **port** value in development mode.
+Alternatively to let npm start the dev app, you can also run:
+
+    npm run start
+
+To let docker take care of this in production mode:
+
+    docker-compose -f docker-compose.yml up
+
+This will distribute a production build to the **/dist** folder and run the node script on the specified **port**
+Alternatively you can also run:
+
+    npm run build && node ./dist/server/server.js
 
 ## Features
 
@@ -75,7 +99,6 @@ Consider [Context](https://reactjs.org/docs/context.html).
 
 - [Docker](https://www.docker.com/get-started) - optional
 
-
 ### Continuous Integration
 
 - [CircleCI](https://circleci.com/docs/) - optional
@@ -108,30 +131,6 @@ Consider [Context](https://reactjs.org/docs/context.html).
 
 The application comes bundled with [StoryBook](https://storybook.js.org/), to create your own UI free of opinions.
 I've previously added [MaterialUI](https://material-ui.com/]) and [Bootstrap](https://react-bootstrap.github.io/) without much hassle!
-
-## Installation & Quick Start
-
-This app can be installed by using the command:
-
-    npm install
-
-To let docker take care of this in development mode:
-
-    docker-compose -f docker-compose.dev.yml up
-
-This will start the app on the chosen **port** value in development mode.
-Alternatively to let npm start the dev app, you can also run:
-
-    npm run start
-
-To let docker take care of this in production mode:
-
-    docker-compose -f docker-compose.yml up
-
-This will distribute a production build to the **/dist** folder and run the node script on the specified **port**
-Alternatively you can also run:
-
-    npm run build && node ./dist/server/server.js
 
 ## Usage
 
