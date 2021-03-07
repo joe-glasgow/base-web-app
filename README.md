@@ -1,6 +1,6 @@
 [icon]: https://img.icons8.com/ios/452/foundation.png
 
-# Base Web App [<img style="background: white;" src="https://img.icons8.com/ios/452/foundation.png" width="35"/>](icon)
+# Base Web App [<img src="https://img.icons8.com/ios/452/foundation.png" width="55"/>](icon)
 
 Forked from the truly wonderful [manuelbieh/react-ssr-setup](https://github.com/manuelbieh/react-ssr-setup).
 
