@@ -31,27 +31,27 @@ Circle CI Build Status:
 - - [Import SVGs as ReactComponent](##import-svgs-as-reactcomponent)
     -- [Use plain JavaScript instead of TypeScript](##use-plain-javaScript-instead-of-typeScript)
 
-##Features
+## Features
 
-###Gzip by default
+### Gzip by default
 
 Webpack builds assets (JS/CSS) to Gzip and the Express app serves these versions automatically.
 
 This project has out-of-the-box support for the following libs, tools and packages:
 
-###Languages
+### Languages
 
 - [TypeScript](https://www.typescriptlang.org/) (via [Babel](https://babeljs.io/)) - Pure JS is optional
 
-###Frameworks
+### Frameworks
 
 - [React](https://reactjs.org/blog/2020/10/20/react-v17.html) 17
 
-###UI
+### UI
 
 - [Storybook](https://storybook.js.org/) - (Dev build only, optional)
 
-###Libraries
+### Libraries
 
 - [Redux](https://github.com/reduxjs/redux),
 - [Reselect](https://github.com/reduxjs/reselect),
@@ -59,26 +59,26 @@ This project has out-of-the-box support for the following libs, tools and packag
 But please see [this interesting article](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367) from Dan Abramove before implementing.
 Consider [Context](https://reactjs.org/docs/context.html).
 
-###Build tools
+### Build tools
 
 - [Babel](https://babeljs.io/) 7,
 - [Webpack](https://webpack.js.org/) 5,
 
-###Containerisation
+### Containerisation
 
 - [Docker](https://www.docker.com/get-started) - optional
 
-###Code Quality
+### Code Quality
 
 - [ESLint](https://eslint.org/) 7,
 - [Prettier](https://prettier.io/),
 
-###Testing
+### Testing
 
 - [Jest](https://jestjs.io/) 26,
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/),
 
-###Utilities
+### Utilities
 
 - [Husky](https://github.com/typicode/husky),
 - [SSR](https://medium.com/jspoint/a-beginners-guide-to-react-server-side-rendering-ssr-bf3853841d55) (Server Side Rendering),
@@ -86,17 +86,17 @@ Consider [Context](https://reactjs.org/docs/context.html).
 - [CSS Modules](https://github.com/css-modules/css-modules),
 - [PostCSS](https://postcss.org/),
 
-###Other features
+### Other features
 
 - React Fast Refresh,
 - React i18next,
 
-##Composing the UI
+## Composing the UI
 
 The application comes bundled with [StoryBook](https://storybook.js.org/), to create your own UI free of opinions.
 I've previously added [MaterialUI](https://material-ui.com/]) and [Bootstrap](https://react-bootstrap.github.io/) without much hassle!
 
-##Installation & Quick Start
+## Installation & Quick Start
 
 This app can be installed by using the command:
 
@@ -124,7 +124,7 @@ Alternatively you can also run:
 
 There are npm scripts for all the relevant things. The server will always be started on port 8500 unless otherwise specified in `process.env.PORT`. You can use a `.env` file to specify env vars. If you want to use them in your client side code, don't forget to add them in [config/env.js](config/env.js#L37).
 
-###Scripts:
+### Scripts:
 
 #### `npm start`
 
@@ -180,19 +180,19 @@ There are a few environment variables you can set to adjust the setup to your ne
 
 ## Tricks
 
-###Component scaffolding using plop
+### Component scaffolding using plop
 
 Along with this starter kit comes `plop` - a great command line tool to keep the structure of your Redux components and Redux reducers consistent. Run `npm plop` to have components and Redux reducers created for you automatically! Just enter a name, answer a few questions and you're ready to go! You can of course adjust everything to your needs. All Plop templates can be found in the `config/plop` directory.
 
-###Avoid source map generation for faster builds
+### Avoid source map generation for faster builds
 
 In some cases you might not want to generate source maps for the generated files. In this case you can set the `OMIT_SOURCEMAP` environment variable to `true`. No source map files will be generated then. This works no matter if you're in devmode or building for production.
 
-###Change the port of the dev environment
+### Change the port of the dev environment
 
 By default if you run `npm start` the development server will use port 8500. You can change this by specifying a `PORT` environment variable.
 
-###Import SVGs as ReactComponent
+### Import SVGs as ReactComponent
 
 You can import SVG files as React components exactly the way you can do it in Create React App 2.0:
 
@@ -202,7 +202,7 @@ import { ReactComponent as Logo } from './Logo.svg';
 
 Then you can use it in JSX like `<div><Logo /></div>`.
 
-###Use plain JavaScript instead of TypeScript
+### Use plain JavaScript instead of TypeScript
 
 - remove the `@babel/typescript` preset from `babel.preview.js`
 - uninstall TypeScript: `npm uninstall typescript @babel/preset-typescript`
