@@ -45,8 +45,6 @@ Twisted for my own purposes.
 
 Webpack builds assets (JS/CSS) to Gzip and the Express app serves these versions automatically.
 
-This project has out-of-the-box support for the following libs, tools and packages:
-
 ### Languages
 
 - [TypeScript](https://www.typescriptlang.org/) (via [Babel](https://babeljs.io/)) - Pure JS is optional
