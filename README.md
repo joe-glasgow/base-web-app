@@ -1,15 +1,12 @@
 [icon]: https://img.icons8.com/ios/452/foundation.png
 
-[![Known Vulnerabilities](https://snyk.io/test/github/joe-glasgow/base-web-app/badge.svg)](https://snyk.io/test/github/joe-glasgow/base-web-app)
+[![Known Vulnerabilities](https://snyk.io/test/github/joe-glasgow/base-web-app/badge.svg)](https://snyk.io/test/github/joe-glasgow/base-web-app) [![CircleCI](https://circleci.com/gh/joe-glasgow/base-web-app/tree/main.svg?style=svg)](https://circleci.com/gh/joe-glasgow/base-web-app/tree/main)
 
 # Base Web App [<img src="https://img.icons8.com/ios/452/foundation.png" width="55"/>](icon)
 
 Forked from the truly wonderful [manuelbieh/react-ssr-setup](https://github.com/manuelbieh/react-ssr-setup).
 
 Twisted for my own purposes.
-
-Circle CI Build Status:
-[![CircleCI](https://circleci.com/gh/joe-glasgow/base-web-app/tree/main.svg?style=svg)](https://circleci.com/gh/joe-glasgow/base-web-app/tree/main)
 
 ## Table of Contents
 
