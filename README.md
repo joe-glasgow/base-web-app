@@ -1,6 +1,9 @@
-# Base Web App
+[icon]: https://img.icons8.com/ios/452/foundation.png
 
-Forked from the truly wonderful [manuelbieh/react-ssr-setup](https://github.com/manuelbieh/react-ssr-setup)
+# Base Web App [<img src="https://img.icons8.com/ios/452/foundation.png" width="35"/>](icon)
+
+Forked from the truly wonderful [manuelbieh/react-ssr-setup](https://github.com/manuelbieh/react-ssr-setup).
+
 Twisted for my own purposes.
 
 Circle CI Build Status:
