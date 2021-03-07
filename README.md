@@ -1,5 +1,7 @@
 [icon]: https://img.icons8.com/ios/452/foundation.png
 
+[![Known Vulnerabilities](https://snyk.io/test/github/joe-glasgow/base-web-app/badge.svg)](https://snyk.io/test/github/joe-glasgow/base-web-app)
+
 # Base Web App [<img src="https://img.icons8.com/ios/452/foundation.png" width="55"/>](icon)
 
 Forked from the truly wonderful [manuelbieh/react-ssr-setup](https://github.com/manuelbieh/react-ssr-setup).
