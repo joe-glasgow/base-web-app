@@ -20,8 +20,8 @@ Circle CI Build Status:
 - - [Testing](#testing)
 - - [Utilities](#utilities)
 - - [Other features](#other-features)
-- [Composing The UI](#comping-the-ui)
-- [Installation and Quickstart](#installation-and-quickstart)
+- [Composing The UI](##composing-the-ui)
+- [Installation and Quickstart](#installation--quick-start)
 - [Usage](#usage)
 - - [Scripts](#scripts)
 - [Tricks](#tricks)
@@ -29,7 +29,7 @@ Circle CI Build Status:
 - - [Avoid source map generation for faster builds](#avoid-source-map-generation-for-faster-builds)
 - - [Change the port of the dev environment](#change-the-port-of-the-dev-environment)
 - - [Import SVGs as ReactComponent](#import-svgs-as-reactcomponent)
-    -- [Use plain JavaScript instead of TypeScript](#use-plain-javaScript-instead-of-typeScript)
+- - [Use plain JavaScript instead of TypeScript](#use-plain-javaScript-instead-of-typeScript)
 
 ## Features
 
