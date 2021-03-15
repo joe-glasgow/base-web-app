@@ -1,6 +1,6 @@
 {
   "name": "base-web-app",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Joseph Morrison <joseph.morrison@scotcode.co.uk> (https://github.com/joe-glasgow)",
   "license": "MIT",
   "engines": {
@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@loadable/component": "^5.14.1",
+    "@loadable/server": "^5.14.2",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
@@ -75,6 +76,8 @@
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.13.0",
     "@babel/register": "^7.13.8",
+    "@loadable/babel-plugin": "^5.13.2",
+    "@loadable/webpack-plugin": "^5.14.2",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "@storybook/addon-actions": "^6.1.21",
     "@storybook/addon-links": "^6.1.21",
@@ -94,6 +97,8 @@
     "@types/express-serve-static-core": "^4.17.18",
     "@types/jest": "^26.0.20",
     "@types/loadable__component": "^5.13.3",
+    "@types/loadable__server": "^5.12.3",
+    "@types/loadable__webpack-plugin": "^5.7.1",
     "@types/mini-css-extract-plugin": "^1.2.2",
     "@types/mkdirp": "^1.0.1",
     "@types/nodemon": "^1.19.0",

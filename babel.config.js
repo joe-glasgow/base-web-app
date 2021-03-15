@@ -20,6 +20,7 @@ module.exports = {
         '@babel/proposal-class-properties',
         '@babel/proposal-optional-chaining',
         '@babel/syntax-dynamic-import',
+        '@loadable/babel-plugin',
         'macros',
     ],
     env: {

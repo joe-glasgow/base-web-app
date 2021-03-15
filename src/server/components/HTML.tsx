@@ -2,22 +2,25 @@ import React, { ReactElement } from 'react';
 
 type Props = {
     children: any;
-    css: string[];
+    links: Array<ReactElement<{}>>;
     helmetContext: any;
-    scripts: string[];
+    scripts: Array<ReactElement<{}>>;
     state: string;
     styles?: Array<ReactElement<{}>>;
+    language?: string;
 };
 
+// @ts-ignore
 const HTML = ({
     children,
-    css = [],
+    links = [],
     scripts = [],
     state = '{}',
     styles = undefined,
     helmetContext: { helmet },
+    language = 'en-GB',
 }: Props) => (
-    <html lang="">
+    <html lang={language}>
         <head>
             <meta charSet="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,9 +30,7 @@ const HTML = ({
             {helmet.meta.toComponent()}
             {helmet.link.toComponent()}
             {helmet.script.toComponent()}
-            {css.filter(Boolean).map((href) => (
-                <link key={href} rel="stylesheet" href={href} />
-            ))}
+            {links}
             <script
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
@@ -42,9 +43,7 @@ const HTML = ({
         <body>
             {/* eslint-disable-next-line react/no-danger */}
             <div id="app" dangerouslySetInnerHTML={{ __html: children }} />
-            {scripts.filter(Boolean).map((src) => (
-                <script key={src} src={src} />
-            ))}
+            {scripts}
         </body>
     </html>
 );

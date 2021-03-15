@@ -1,8 +1,8 @@
-version: "2"
+version: '2'
 services:
   node:
-    image: "library/node:14-alpine"
-    user: "node"
+    image: 'library/node:14-alpine'
+    user: 'node'
     build:
       context: .
     working_dir: /home/node/app
@@ -13,4 +13,4 @@ services:
     ports:
       - 8500:8500
       - 8501:8501
-    command: sh -cl 'npm install --verbose && npm run build && node ./dist/server/server.js'
+    command: sh -cl 'npm install --verbose && npm run build && pm2-runtime ./dist/server/server.js'

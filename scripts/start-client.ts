@@ -45,6 +45,9 @@ const start = async () => {
         webpackDevMiddleware(clientCompiler, {
             publicPath: clientConfig.output.publicPath,
             stats: clientConfig.stats,
+            writeToDisk(filePath: string) {
+                return /dist\/client\//.test(filePath) || /loadable-stats/.test(filePath);
+            },
             watchOptions,
         })
     );
@@ -60,8 +63,9 @@ const start = async () => {
             console.log(
                 `[${new Date().toISOString()}]`,
                 chalk.blue(
-                    `App is running: ${process.env.HOST || 'http://localhost'}:${process.env.PORT ||
-                        8500}`
+                    `App is running: ${process.env.HOST || 'http://localhost'}:${
+                        process.env.PORT || 8500
+                    }`
                 )
             );
         });
