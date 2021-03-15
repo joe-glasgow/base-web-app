@@ -63,6 +63,9 @@ const start = async () => {
         webpackDevMiddleware(clientCompiler, {
             publicPath: clientConfig.output.publicPath,
             stats: clientConfig.stats,
+            writeToDisk(filePath: string) {
+                return /dist\/server\//.test(filePath) || /loadable-stats/.test(filePath);
+            },
         })
     );
 

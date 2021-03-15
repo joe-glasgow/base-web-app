@@ -3,6 +3,7 @@ import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { loadableReady } from '@loadable/component';
 
 import { configureStore } from '../shared/store';
 import App from '../shared/App';
@@ -16,18 +17,21 @@ const store =
         initialState: window.__PRELOADED_STATE__,
     });
 
-hydrate(
-    <Provider store={store}>
-        <Router>
-            <IntlProvider>
-                <HelmetProvider>
-                    <App />
-                </HelmetProvider>
-            </IntlProvider>
-        </Router>
-    </Provider>,
-    document.getElementById('app')
-);
+loadableReady(() => {
+    const root = document.getElementById('app');
+    hydrate(
+        <Provider store={store}>
+            <Router>
+                <IntlProvider>
+                    <HelmetProvider>
+                        <App />
+                    </HelmetProvider>
+                </IntlProvider>
+            </Router>
+        </Provider>,
+        root
+    );
+});
 
 if (process.env.NODE_ENV === 'development') {
     if (module.hot) {

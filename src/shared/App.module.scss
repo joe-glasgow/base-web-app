@@ -7,6 +7,16 @@
     font-size: var(--font-size-base);
 }
 
+// Accessibility: anchor min-height: 48px for tap targets.
+:global(a) {
+    display: block;
+    min-height: 48px;
+    @media (min-width: 768px) {
+        display: inherit;
+        min-height: auto;
+    }
+}
+
 .wrapper {
     margin: auto;
     max-width: 100%;

@@ -5,6 +5,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HTMLInlineCSSWebpackPlugin from 'html-inline-css-webpack-plugin';
+import LoadablePlugin from '@loadable/webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import paths from '../paths';
 import { clientOnly } from '../../scripts/utils';
@@ -37,6 +38,7 @@ if (isDevelopment) {
 }
 
 const clientBase = [
+    new LoadablePlugin(),
     clientOnly() &&
         new HtmlWebpackPlugin({
             filename: path.join(paths.clientBuild, 'index.html'),
