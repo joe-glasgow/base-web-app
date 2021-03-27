@@ -1,6 +1,6 @@
 {
   "name": "base-web-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Joseph Morrison <joseph.morrison@scotcode.co.uk> (https://github.com/joe-glasgow)",
   "license": "MIT",
   "engines": {
@@ -65,7 +65,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.13.0",
-    "@babel/core": "^7.13.8",
+    "@babel/core": "^7.13.13",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
     "@babel/plugin-proposal-optional-chaining": "^7.13.8",
@@ -73,7 +73,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.13.8",
     "@babel/plugin-transform-runtime": "^7.13.9",
     "@babel/preset-env": "^7.13.9",
-    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@babel/register": "^7.13.8",
     "@loadable/babel-plugin": "^5.13.2",
