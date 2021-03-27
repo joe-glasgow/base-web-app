@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { memo, FC, useEffect } from 'react';
 import i18next from 'i18next';
 import i18nextXHRBackend from 'i18next-xhr-backend';
 import { I18nextProvider } from 'react-i18next';
@@ -42,7 +42,7 @@ i18next.init({
 
 i18next.languages = ['de_DE', 'en_US'];
 
-const I18N: React.FC<any> = ({ children }) => {
+const I18N: FC<any> = ({ children }) => {
     const locale = useSelector(getLocale);
     useEffect(() => {
         i18next.changeLanguage(locale);
@@ -51,4 +51,4 @@ const I18N: React.FC<any> = ({ children }) => {
     return <I18nextProvider i18n={i18next}>{children}</I18nextProvider>;
 };
 
-export default React.memo(I18N);
+export default memo(I18N);

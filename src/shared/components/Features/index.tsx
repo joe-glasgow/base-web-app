@@ -1,6 +1,3 @@
-import React from 'react';
-// @ts-ignore
-
 const Features = () => (
     <>
         <h1>Hello World</h1>

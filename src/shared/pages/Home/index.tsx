@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { FC, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import Features from 'shared/components/Features';
@@ -6,7 +6,7 @@ import { setLocale } from 'store/app/actions';
 import { Locale } from 'store/app/types';
 import StyledButton from 'components/StyledButton';
 
-const App: React.FC<any> = () => {
+const App: FC = () => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const handleLocaleChange = useCallback(

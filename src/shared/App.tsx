@@ -1,5 +1,4 @@
-// import React, { Suspense } from 'react';
-import React, { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { Link, Route, Switch } from 'react-router-dom';
@@ -8,7 +7,7 @@ import favicon from '../shared/assets/favicon.png';
 import routes from './routes';
 import css from './App.module.scss';
 
-const App: React.FC<any> = () => {
+const App: FC<any> = () => {
     const { t } = useTranslation();
     useEffect(() => {
         const jssStyles: any = document.querySelector('#jss-server-side');

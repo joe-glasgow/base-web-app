@@ -11,7 +11,7 @@ export default {
         /* When working with linked modules which have their own node_modules we must make sure
         to always load the same React version in all components. So we define an alias here and
         resolve it to node_modules/* to avoid potential issues */
-        'react': require.resolve('react'),
+        'react': getDependencyPath('react'),
         'react-dom': require.resolve('react-dom'),
         // TODO: This artificially blows up the bundle size (255 kb -> 297 kb). Investigate why.
         // Looks like webpack then uses commonjs modules instead of treeshaken esm.
