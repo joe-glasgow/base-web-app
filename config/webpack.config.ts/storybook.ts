@@ -1,8 +1,7 @@
 import { client as loaders } from './loaders';
-import { sBClient as plugins } from './plugins';
 
 export default (storybookBaseConfig: any) => {
-    storybookBaseConfig.plugins = [...storybookBaseConfig.plugins, ...plugins];
+    storybookBaseConfig.plugins = [...storybookBaseConfig.plugins];
     storybookBaseConfig.module.rules = [...storybookBaseConfig.module.rules, ...loaders];
 
     storybookBaseConfig.resolve.extensions = storybookBaseConfig.resolve.extensions.concat([

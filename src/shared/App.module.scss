@@ -1,30 +1,37 @@
+@use '../scss' as styles;
 @import '@csstools/normalize.css';
-@import './variables.scss';
-@import url('https://fonts.googleapis.com/css?family=Lora:400,700|Titillium+Web:400,700&display=swap');
-
 :global(body) {
-    font-family: 'Titillium Web', Arial, sans-serif;
-    font-size: var(--font-size-base);
+    font-family: styles.$base-font-family;
+    font-size: styles.$font-size-base;
+    height: 100%;
+    @include styles.reset-spacing();
+}
+
+:global(html) {
+    height: 100%;
 }
 
 // Accessibility: anchor min-height: 48px for tap targets.
 :global(a) {
     display: block;
     min-height: 48px;
-    @media (min-width: 768px) {
+    @media (min-width: styles.$tablet) {
         display: inherit;
         min-height: auto;
     }
 }
 
-.wrapper {
-    margin: auto;
-    max-width: 100%;
-    width: 768px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include styles.reset-spacing();
+}
 
-    h1 {
-        font-size: var(--font-size-h1);
-    }
+.wrapper {
+    @include styles.reset-spacing();
 }
 
 .reactLogo {
