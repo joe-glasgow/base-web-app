@@ -2,6 +2,7 @@ import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 // @ts-ignore
 import getCSSModuleLocalIdent from 'react-dev-utils/getCSSModuleLocalIdent';
+
 const generateSourceMap = process.env.OMIT_SOURCEMAP === 'true' ? false : true;
 
 const cssRegex = /\.((c|sa|sc)ss)$/i;
@@ -71,6 +72,15 @@ const sassLoader = {
             options: {
                 sourceMap: true,
             },
+        },
+    ],
+};
+
+const fontLoader = {
+    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+    use: [
+        {
+            loader: 'url-loader',
         },
     ],
 };
@@ -194,6 +204,7 @@ const fileLoaderServer = {
 export const client = [
     {
         oneOf: [
+            fontLoader,
             babelLoader,
             sassLoader,
             cssModuleLoaderClient,
@@ -207,6 +218,7 @@ export const client = [
 export const server = [
     {
         oneOf: [
+            fontLoader,
             babelLoader,
             sassLoader,
             cssModuleLoaderServer,

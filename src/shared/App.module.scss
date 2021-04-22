@@ -1,7 +1,12 @@
 @use '../scss' as styles;
 @import '@csstools/normalize.css';
+@font-face {
+    font-family: 'BroshK-5489';
+    src: url('../fonts/BroshK/BroshK-5489.woff') format('woff');
+}
 :global(body) {
-    font-family: styles.$base-font-family;
+    //font-family: styles.$base-font-family;
+    font-family: 'BroshK-5489', sans-serif;
     font-size: styles.$font-size-base;
     height: 100%;
     @include styles.reset-spacing();
