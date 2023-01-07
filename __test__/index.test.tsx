@@ -1,5 +1,5 @@
 import { render, RenderResult } from "@testing-library/react";
-import Home from "./index";
+import Home from "../pages/index";
 
 describe("Home page", () => {
   let page: RenderResult<
